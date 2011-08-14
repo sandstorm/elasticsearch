@@ -28,3 +28,17 @@ plugin.tx_elasticsearch._CSS_DEFAULT_STYLE (
 		vertical-align:top;
 	}
 )
+
+
+
+ # Module configuration
+module.tx_elasticsearch {
+	persistence {
+		storagePid = {$module.tx_elasticsearch.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_elasticsearch.view.templateRootPath}
+		partialRootPath = {$module.tx_elasticsearch.view.partialRootPath}
+		layoutRootPath = {$module.tx_elasticsearch.view.layoutRootPath}
+	}
+}

@@ -17,6 +17,28 @@ Tx_Extbase_Utility_Extension::registerPlugin(
 
 
 
+if (TYPO3_MODE === 'BE') {
+
+	/**
+	 * Registers a Backend Module
+	 */
+	Tx_Extbase_Utility_Extension::registerModule(
+		$_EXTKEY,
+		'tools',	 // Make module a submodule of 'tools'
+		'search',	// Submodule key
+		'',						// Position
+		array(
+			
+		),
+		array(
+			'access' => 'user,group',
+			'icon'   => 'EXT:' . $_EXTKEY . '/ext_icon.gif',
+			'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_search.xml',
+		)
+	);
+
+}
+
 
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Elastic Search');
 
