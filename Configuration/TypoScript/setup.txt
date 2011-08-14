@@ -1,0 +1,30 @@
+plugin.tx_elasticsearch {
+	view {
+		templateRootPath = {$plugin.tx_elasticsearch.view.templateRootPath}
+		partialRootPath = {$plugin.tx_elasticsearch.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_elasticsearch.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_elasticsearch.persistence.storagePid}
+	}
+}
+
+plugin.tx_elasticsearch._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-elasticsearch table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-elasticsearch table th {
+		font-weight:bold;
+	}
+
+	.tx-elasticsearch table td {
+		vertical-align:top;
+	}
+)
