@@ -28,7 +28,7 @@ if (TYPO3_MODE === 'BE') {
 		'search',	// Submodule key
 		'',						// Position
 		array(
-			
+			'Backend' => 'index,setupMappings'
 		),
 		array(
 			'access' => 'user,group',
