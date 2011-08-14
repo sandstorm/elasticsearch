@@ -1,0 +1,43 @@
+
+plugin.tx_elasticsearch {
+
+	index {
+		enableIndexing = 1 #X
+		enableIndexingWhileBeUserLoggedIn = 1 #X
+
+		additionalFields {
+
+		}
+
+			// assigns processing instructions to Solr fields during indexing, Solr field = processing instruction
+		fieldProcessingInstructions {
+			changed = timestampToIsoDate
+			created = timestampToIsoDate
+			endtime = timestampToIsoDate
+		}
+	}
+
+	logging {
+		exceptions = 1 #X
+
+		indexing = 1 #X
+		indexing {
+			missingTypo3SearchMarkers = 1 #X
+			indexQueuePageIndexerGetData = 0
+		}
+
+		query {
+			filters = 0
+			searchWords = 0
+			queryString = 0
+			rawPost = 0
+			rawGet = 0
+		}
+
+		scheduler {
+				// TODO add logging to the optimize task
+			optimize = 0
+		}
+	}
+}
+
